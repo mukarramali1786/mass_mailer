@@ -1,0 +1,9 @@
+### 3. Key Vault Setup: `keyvault_secrets.ps1`
+```powershell
+# Azure PowerShell Script to Set Secrets in Key Vault
+$resourceGroupName = "EmailAutomationRG"
+$keyVaultName = "EmailKV"
+
+Set-AzKeyVaultSecret -VaultName $keyVaultName -Name "sender_email" -SecretValue (ConvertTo-SecureString "your-email@gmail.com" -AsPlainText -Force)
+Set-AzKeyVaultSecret -VaultName $keyVaultName -Name "sender_password" -SecretValue (ConvertTo-SecureString "your-password" -AsPlainText -Force)
+```
