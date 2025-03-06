@@ -1,0 +1,20 @@
+### 2. Azure Data Factory Pipeline: `pipeline.json`
+```json
+{
+  "name": "EmailAutomationPipeline",
+  "activities": [
+    {
+      "name": "TriggerDatabricksNotebook",
+      "type": "DatabricksNotebook",
+      "linkedServiceName": {
+        "referenceName": "AzureDatabricksLinkedService",
+        "type": "LinkedServiceReference"
+      },
+      "typeProperties": {
+        "notebookPath": "/bulk_email_sender",
+        "baseParameters": {}
+      }
+    }
+  ]
+}
+```
